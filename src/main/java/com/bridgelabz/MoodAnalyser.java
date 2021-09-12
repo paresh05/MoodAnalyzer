@@ -22,9 +22,10 @@ public class MoodAnalyser {
 	 * This function is used to analyze the mood according to the message passed
 	 * 
 	 * If the message passed contains Sad then it returns SAD else returns HAPPY
+	 * @throws MoodAnalyserException 
 	 */
 	
-	public String analyseMood()
+	public String analyseMood() throws MoodAnalyserException
 	{
 		try {
 			if(message.contains("Sad"))
@@ -34,7 +35,7 @@ public class MoodAnalyser {
 		}
 		catch(NullPointerException e)
 		{
-			return "HAPPY";
+			throw new MoodAnalyserException ("Please Enter correct message");
 		}
 	}
 	
